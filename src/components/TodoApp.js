@@ -18,7 +18,11 @@ addItem = (event) =>{
     event.preventDefault();
     let currenttext = this.state.textContent;
     let currentitems = this.state.listItems;
-             if(this.state.checkEdit == true){
+    if(this.state.textContent === ''){
+            alert("Plesae Enter Item Name")
+    }
+    else{
+             if(this.state.checkEdit === true){
                 this.state.listItems.map((elm,key)=>{
                     if(elm === this.state.IsEditItem)
                     {
@@ -32,6 +36,7 @@ addItem = (event) =>{
                               })
                         }
                     }
+                    return elm;
                 })
              }
              else{
@@ -40,13 +45,14 @@ addItem = (event) =>{
                     listItems : currentitems,
                     textContent : "",             
                   })
-             }          
+             } 
+            }         
     }
 
 editItem = (itm,key)=>{
-  let editItem = this.state.listItems.find((elm)=>{
-        return elm === itm;
-  })
+//   let editItem = this.state.listItems.find((elm)=>{
+//         return elm === itm;
+//   })
   this.setState({
     textContent : itm,
     IsEditItem:itm,
