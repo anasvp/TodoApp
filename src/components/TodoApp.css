@@ -70,3 +70,11 @@ ul li i{
 flex: 1;
   
 }
+@media only screen and (max-width: 600px) {
+    .Todoapp-Div{
+        width: 290px;
+        margin: auto;
+        margin-top: 30px;
+    }
+    
+}
